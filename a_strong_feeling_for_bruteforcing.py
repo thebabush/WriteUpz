@@ -4,7 +4,7 @@ import subprocess
 
 
 def run(txt):
-    return subprocess.run('./asf', input=txt, stdout=subprocess.PIPE).stdout
+    return subprocess.run('./a_strong_feeling', input=txt, stdout=subprocess.PIPE).stdout
 
 
 if __name__ == '__main__':
