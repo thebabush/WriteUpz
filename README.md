@@ -1,5 +1,5 @@
 # IceCTF-2016-WriteUp
-My solutions to some of the challenges in IceCTF 2016
+My solutions to some of the challenges in IceCTF 2016. I should mention that this was my first CTF evah...
 
 ## A Strong Feeling
 
