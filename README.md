@@ -31,6 +31,8 @@ It was fun to see that a some people actually went beyond the scope of the CTF a
 
 ## So Close
 
+**EDIT:** Apparently I missed that the ELF is non-PIE so I totally overcomplicated things :)
+
 This was a buffer overflow in which we couldn't overwrite the return address of the function, so things got a bit more complicated. Since I'm a n00b and I didn't know any better, I ended up using a ROP gadget from libc in order to bypass ASLR (`call ecx`) and then tried to run the shellcode many times until I succeeded (kinda like... bruteforcing). If you solved it in a sane way please drop me a line.
 
 I rewrote the script I used in order to make it totally automatic... it is now too verbose but I think it's pretty clear what it does:
