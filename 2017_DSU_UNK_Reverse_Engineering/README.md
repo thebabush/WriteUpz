@@ -12,6 +12,28 @@ They were simple enough to not require complex automated tools.
 
 ## x86
 
+### Challenge 2
+
+The file for this challenge was an EXE requiring two different password, that
+once contatenated formed the flag.
+
+The first password was checked inside the function at `.text:00401120`.
+It loads two hardcoded magic values in memory and then XORs them byte per byte.
+One of the values read `DEADCODE` so this hints that we are in the right
+direction.
+I reimplemented the check in python inside [x86_2_0.py](x86_2_0.py).
+
+The second password was checked in the function at `.text:00401210`.
+I couldn't get the binary to get past the first check even if I had the correct
+password so I simply modded the file to jump directly to the second check.
+We don't really have to understand the function completely to solve the
+challenge, because for every input character the application prints the value it
+expected.
+So I hacked together an ugly python script to bruteforce it char-by-char.
+The final script is file [x86_2_1.py](x86_2_1.py).
+It's really ugly but it works and I just wanted something quick to write.
+**Note:** the script is supposed to be run on Linux with `wine` installed.
+
 ### Challenge 3
 
 The file was the dump of a MBR.
