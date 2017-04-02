@@ -26,9 +26,8 @@ the first you see).
 
 In the `main()` for the binary, just keep track of the value of R0.
 Each value is the ASCII value of a character of the flag.
-In [arm_2.py](arm_2.py) I copied the interesting part of the disassembly and
-I implemented a dumb DIY emulator.
-Just run the script to get the flag.
+I copied the interesting part of the disassembly and implemented a dumb DIY
+emulator. Just run the [arm_2.py](arm_2.py) to get the flag.
 
 ### Challenge 3
 
@@ -68,7 +67,7 @@ And there it is :)
 
 This is similar to the previous, but more complicated.
 Special care must be taken to avoid eval'ing code which we don't control, but I
-managed to solve with the same "eval => print" style.
+managed to solve it with the same "eval => print" style.
 
 By the way, printing stuff as you go is also a technique which works for simple
 javascript challenges.
