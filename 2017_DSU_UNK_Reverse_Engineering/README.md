@@ -10,7 +10,39 @@ Most of the challenges involved obfuscated (pseudo-)malware so there's no much
 point in explaining how I gradually deobfuscated them.
 They were simple enough to not require complex automated tools.
 
+Some solutions are missing because I deleted the challenge file so I can't
+review them, others because they require a lengthy manual process of analysis
+that I can't really explain without writing a ton of text here.
+
+## ARM
+
+### Challenge 1
+
+I don't remember anymore, but I recall the issue was check which one of the
+flags embedded in the binary was the real one (instead of just submitting
+the first you see).
+
+### Challenge 2
+
+In the `main()` for the binary, just keep track of the value of R0.
+Each value is the ASCII value of a character of the flag.
+In [arm_2.py](arm_2.py) I copied the interesting part of the disassembly and
+I implemented a dumb DIY emulator.
+Just run the script to get the flag.
+
+### Challenge 3
+
+This challenge is similar to the previous one, but the value of R0 is changed
+in a ROP fashion.
+I once again implemented a dumb emulator to unfold the ROP.
+You can find it in [arm_3.py](arm_3.py).
+
 ## x86
+
+### Challenge 1
+
+I deleted the file, but the flag is embedded as a string in it, so you can get
+it by simply running `strings <filename> | grep @`.
 
 ### Challenge 2
 
