@@ -1,4 +1,4 @@
-# Dakota State University and University of Nebraska-Kearny Reverse Engineering CTF
+# Dakota State University and University of Nebraska-Kearny Reverse Engineering CTF 2017
 
 This CTF was fun :D
 
@@ -36,6 +36,15 @@ This challenge is similar to the previous one, but the value of R0 is changed
 in a ROP fashion.
 I once again implemented a dumb emulator to unfold the ROP.
 You can find it in [arm_3.py](arm_3.py).
+
+## Shellcode
+
+The flag is hidden in the final part of the outer function.
+It runs two loops that reassemble the flag from the string at the end of the
+binary.
+The logic is reimplemented in [shellcode.py](shellcode.py).
+The `shellcode` file is copied as-is from the challenge.
+If you want me to remove it please contact me.
 
 ## x86
 
