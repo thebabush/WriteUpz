@@ -1,6 +1,7 @@
 # WriteUpz
 
 Here you can find some write-ups of the various CTF/challenges I took part in.
+Currently looking for valid team members for web security / REEng CTFs.
 
 ## CTFs
 
