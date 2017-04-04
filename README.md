@@ -14,5 +14,5 @@ In chronological order:
 
 In chronological order:
 
-* TheZZAZZGlitch's April Fools event 2017 ([tied 1st place (6th)](https://zzazzdzz.github.io/fools2017/))
+* TheZZAZZGlitch's April Fools event 2017 ([tied 1st place (5th)](https://zzazzdzz.github.io/fools2017/))
 
