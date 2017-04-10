@@ -2,13 +2,13 @@
 
 This is not really a CTF, but a GameBoy/Pokemon reversing challenge/game
 (too many slashes here).
-It involved loading up a custom-made savefile that, upon starting the game
+It involved loading up a custom-made savefile that, upon starting the game,
 would leave you with this:
 
 ![Screenshot](./screenshot.png)
 
 I was planning to do a writeup for this, but turns out
-[@slipstream already did one](https://gist.github.com/Wack0/1a84651e7e7e0c6f7d5fb5888e361123)
+[@slipstream already did an excellent one](https://gist.github.com/Wack0/1a84651e7e7e0c6f7d5fb5888e361123).
 
 ## Solution / KeyGen
 
@@ -28,6 +28,11 @@ B9 B9 A0 B9 B9
 $ ./gb_encoder.py decode "B9 B9 A0 B9 B9"
 zzazz
 ```
+
+## Savefile reversing
+
+This guy named [NieDzejkob](https://pastebin.com/ykXv6ajC) actually reversed the
+savefile and made a script to reconstruct it.
 
 ## Conclusion
 
